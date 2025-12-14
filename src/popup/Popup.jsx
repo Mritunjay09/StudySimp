@@ -1,4 +1,12 @@
-import { Clock, Settings, BarChart3, Code, Bold } from "lucide-react";
+import { useState } from "react";
+import {
+  Clock,
+  Settings,
+  BarChart3,
+  Code,
+  Bold,
+  StickyNote,
+} from "lucide-react";
 import Note from "./components/Note";
 import LeetCode from "./components/LeetCode";
 import SettingsPanel from "./components/SettingsPanel";
@@ -7,6 +15,8 @@ import Focus from "./components/Focus";
 import "../styles.css";
 
 export default function Popup() {
+  const [activeTab, setActiveTab] = useState("focus");
+
   return (
     <section
       style={{
@@ -14,9 +24,6 @@ export default function Popup() {
           'Inter, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial',
         height: "500px",
         width: "450px",
-        borderRight: "1px solid #333",
-        borderLeft: "1px solid #333",
-        borderBottom: "1px solid #333",
       }}
     >
       <div className="header">
@@ -71,41 +78,74 @@ export default function Popup() {
       {/* Navigation */}
       <div className="tabs-wrapper">
         <div className="tabs">
-          <button className="tab active">
-            <Code style={{ width: "1rem", height: "1rem" }} />
+          <button
+            className={`tab ${activeTab === "notes" ? "active" : ""}`}
+            onClick={() => setActiveTab("notes")}
+          >
+            <StickyNote style={{ width: "1rem", height: "1rem" }} />
             Notes
           </button>
-          <button className="tab">
+
+          <button
+            className={`tab ${activeTab === "leetcode" ? "active" : ""}`}
+            onClick={() => setActiveTab("leetcode")}
+          >
             <Code style={{ width: "1rem", height: "1rem" }} />
             LeetCode
           </button>
-          <button className="tab">
+
+          <button
+            className={`tab ${activeTab === "focus" ? "active" : ""}`}
+            onClick={() => setActiveTab("focus")}
+          >
             <Clock style={{ width: "1rem", height: "1rem" }} />
             Focus
           </button>
-          <button className="tab">
+
+          <button
+            className={`tab ${activeTab === "status" ? "active" : ""}`}
+            onClick={() => setActiveTab("status")}
+          >
             <BarChart3 style={{ width: "1rem", height: "1rem" }} />
             Status
           </button>
-          <button className="tab">
+
+          <button
+            className={`tab ${activeTab === "settings" ? "active" : ""}`}
+            onClick={() => setActiveTab("settings")}
+          >
             <Settings style={{ width: "1rem", height: "1rem" }} />
             Settings
           </button>
         </div>
         <div class="content-container">
-          <div className="tab-content active">
+          <div
+            className={`tab-content ${activeTab === "notes" ? "active" : ""}`}
+          >
             <Note />
           </div>
-          <div className="tab-content">
+          <div
+            className={`tab-content ${
+              activeTab === "leetcode" ? "active" : ""
+            }`}
+          >
             <LeetCode />
           </div>
-          <div className="tab-content">
+          <div
+            className={`tab-content ${activeTab === "focus" ? "active" : ""}`}
+          >
             <Focus />
           </div>
-          <div className="tab-content">
+          <div
+            className={`tab-content ${activeTab === "status" ? "active" : ""}`}
+          >
             <Stats />
           </div>
-          <div className="tab-content">
+          <div
+            className={`tab-content ${
+              activeTab === "settings" ? "active" : ""
+            }`}
+          >
             <SettingsPanel />
           </div>
         </div>

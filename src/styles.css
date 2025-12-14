@@ -13,18 +13,16 @@ body {
   display: flex;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(4px);
+  gap: 0.5rem;
+  padding: 0px 2px 6px 2px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Dark mode */
 .dark .tabs {
   border-bottom: 1px solid #1f2937; /* gray-800 */
   background-color: rgba(17, 24, 39, 0.5); /* gray-900 */
-}
-
-.tabs {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0px 2px 6px 2px;
 }
 
 .tab {
@@ -194,6 +192,70 @@ input {
 .tab-content.active {
   display: block;
 }
+
 .tab-content {
   display: none;
+}
+
+.focusContainer {
+  max-width: 360px;
+  margin: 40px;
+  margin-left: 20px;
+  padding: 14px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Session badge */
+.sessionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.sessionBadge.work {
+  background-color: #eef2ff;
+  color: #4338ca;
+}
+
+.sessionBadge.break {
+  background-color: #ecfdf5;
+  color: #047857;
+}
+
+.focusContainer .icon {
+  width: 20px;
+  height: 20px;
+  background: none;
+}
+
+/* Timer */
+.timer {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.controls button {
+  background: #f3f4f6;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover {
+  background: #e5e7eb;
 }
