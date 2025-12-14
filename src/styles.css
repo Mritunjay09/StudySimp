@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small scrollbar + popup look tweaks */
+body {
+  @apply bg-zinc-950 text-zinc-100;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Inter", sans-serif;
+}
+
+.tabs {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Dark mode */
+.dark .tabs {
+  border-bottom: 1px solid #1f2937; /* gray-800 */
+  background-color: rgba(17, 24, 39, 0.5); /* gray-900 */
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0px 2px 6px 2px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #777;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: #000;
+}
+
+.tab.active {
+  color: #007bff;
+  border-bottom-color: #007bff;
+  border-bottom: 2px solid;
+}
+
+input {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Inter", sans-serif;
+}
+
+.tag {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.current_page {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Inter", sans-serif;
+  border-radius: 10px;
+  background: white;
+  border: none;
+  padding: 8px;
+  gap: 10px;
+  align-items: center;
+}
+.tag {
+  display: flex;
+  justify-content: center;
+}
+
+.current_page:hover {
+  color: #007bff;
+}
+
+.add_note {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 8px;
+  gap: 10px;
+  align-items: center;
+  background-color: rgb(99 102 241);
+  color: white;
+  border: none;
+}
+
+.add_note:hover {
+  background-color: rgb(67 56 202);
+}
+
+.input-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.6rem;
+  height: 1rem;
+  width: 1rem;
+  color: #030303ff; /* Example color */
+}
+
+.input-field {
+  border-radius: 13px;
+  height: 17px;
+  padding: 8px;
+  padding-left: 30px;
+  width: 430px;
+  font: 20px;
+}
+
+.form-container {
+  padding: 1rem;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e5e7eb;
+
+  background-color: #f3f4f6;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+
+  background-color: #f3f4f6;
+  border-radius: 12px;
+}
+
+.icon {
+  padding: 0.5rem;
+  color: #4b5563;
+  border-radius: 0.25rem;
+  transition: #f3f4f6 0.2s ease, color 0.2s ease;
+  border: none;
+  background: #f3f4f6;
+}
+
+/* Hover (light mode) */
+.icon:hover {
+  background-color: #ffffff; /* hover:bg-white */
+}
+
+.textarea {
+  width: 90%;
+  padding: 0.75rem;
+  margin: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d1d5db;
+
+  border-radius: 0.5rem;
+
+  resize: none;
+
+  background-color: #ffffff;
+  color: #111827;
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+}
+
+/* Focus state */
+.textarea:focus {
+  outline: none; /* focus:outline-none */
+  border-color: transparent; /* focus:border-transparent */
+  box-shadow: 0 0 0 2px #6366f1; /* focus:ring-2 + ring-indigo-500 */
+}
+
+.tab-content.active {
+  display: block;
+}
+.tab-content {
+  display: none;
+}
