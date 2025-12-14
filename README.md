@@ -81,7 +81,6 @@ Notes:
 - UI: core popup layout implemented with navigation and a notes editor component.
 - Features not implemented / placeholders:
 
-  - `Focus.jsx` is empty — intended for a Pomodoro/focus timer.
   - `LeetCode.jsx` is empty — intended for a LeetCode summarizer.
   - `Status.jsx` is empty — intended for a growth.
   - `settings.jsx` is empty — intended for a theme change, Timer sound, Pomodoro Timer setting, Data Management.
@@ -99,16 +98,4 @@ Suggested next tasks:
 
 - Feel free to open issues or submit PRs. Keep changes focused and add tests for new logic where appropriate.
 
-**License**
-
-- The package indicates `ISC` in `package.json`. Include or update a `LICENSE` file if you want to make the license explicit in the repo.
-
 ---
-
-If you want, I can also:
-
-- wire up simple `localStorage` persistence for the notes component,
-- implement a basic `Focus` Pomodoro timer,
-- or run a build and show the `dist/` contents.
-
-Tell me which of those you'd like next.
